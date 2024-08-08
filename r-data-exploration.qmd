@@ -2,5 +2,41 @@
 title: "eds212-day4-tasks"
 author: "Matteo Torres"
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r}
+# load libraries ----
+library(tidyverse)
+library(GGally)
+library(skimr)
+```
+
+```{r}
+# explore data ----
+
+names(diamonds)
+
+dim(diamonds)
+
+summary(diamonds)
+
+head(diamonds)
+
+tail(diamonds)
+
+skimr::skim(diamonds)
+
+# create a pairs plot ----
+ggpairs(data= diamonds)
+
+# create a scatterplot ----
+ggplot(data= diamonds, aes(x= carat, y= price)) +
+  geom_point(size= 0.1)
+
+# create a histogram ----
+ggplot(data= diamonds, aes(x= carat)) +
+  geom_histogram()
+```
 
